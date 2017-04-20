@@ -29,6 +29,7 @@ Ext.define('Study.view.login.Login', {
     		value : '1234'
     	},{
     		xtype : 'button',
+    		width : 165,
     		text : '로그인',
     		handler : function(btn) {
     			btn.up("window").close();
