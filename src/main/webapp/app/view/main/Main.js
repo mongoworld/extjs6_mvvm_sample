@@ -13,6 +13,9 @@ Ext.define('Study.view.main.Main', {
     controller: 'main',
     viewModel: 'main',
     layout : 'border',
+    listeners : {
+    	boxready : 'setAdminNm'
+    },
     items : [{
     	xtype : 'panel',
     	region : 'north',
@@ -26,7 +29,7 @@ Ext.define('Study.view.main.Main', {
     		},'->',
     		{
     			xtype : 'button',
-    			text : 'ExtJS TV님',
+    			itemId : 'adminNm',
     			menu : [{
     				text : '비밀번호 변경',
     				handler : 'updatePasswordBtn'

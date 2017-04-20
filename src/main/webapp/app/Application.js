@@ -23,7 +23,9 @@ Ext.define('Study.Application', {
     				Ext.widget("login");
     			}
     			else {
-    				Ext.widget("main");
+    				Ext.widget("main",{
+    					adminNm : result['adminNm']
+    				});
     			}
     		}
     	});
