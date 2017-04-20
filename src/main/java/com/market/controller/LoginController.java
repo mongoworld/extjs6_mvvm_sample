@@ -19,6 +19,12 @@ public class LoginController {
 	@Autowired
 	private LoginDao dao;
 	
+	/**
+	 * 관리자 로그인 정보조회 API
+	 * @param param
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value="/findLogin", method=RequestMethod.POST)
 	public Map<String,Object> findLogin(Admin param, HttpServletRequest request){
 		Map<String, Object> result = null;
@@ -36,6 +42,10 @@ public class LoginController {
 		return result;
 	}
 	
+	/**
+	 * 세션정보가 없을 경우 실패 API 
+	 * @return
+	 */
 	@RequestMapping(value="/fail")
 	public Map<String,Object> fail(){
 		Map<String,Object> result = new HashMap<String,Object>();
