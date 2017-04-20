@@ -8,6 +8,22 @@ Spring Boot
  
 ※ application.properties 파일 변경 필수!
 
+# Clone 후에 해야할 작업
+<pre>
+
+Spring Boot 
+
+1. extjs6_mvvm_sample 우클릭
+2. Configure
+3. Convert To Maven Project.. 선택
+
+Sencha CMD
+
+1. 프로젝트의 webapp 디렉토리까지 이동
+2. sencha app upgrade 다운로드받은ExtJS6.2GPL 디렉토리 지정
+
+</pre>
+
 # ExtJS 6 강좌샘플코드
 <pre>
 ExtJS 6.2 GPL + Spring Boot를 이용하여 간단한 ExtJS MVVM 프로젝트를 만들어보았습니다.
