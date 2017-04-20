@@ -1,6 +1,11 @@
+/**
+ * TODO -  이 클래스는 주문목록 그리드컴포넌트입니다.
+ */
 Ext.define('Study.view.order.OrderList', {
     extend: 'Ext.grid.Panel',
     xtype: 'orderList',
+    controller: 'orderList',
+    viewModel: 'orderList',
     title : '주문목록 조회',
     columnLines : true,
     tbar : [{
@@ -64,30 +69,8 @@ Ext.define('Study.view.order.OrderList', {
     		}
     	}
     }],
-    store : {
-    	fields : ['orderNm','orderDt','orderStatus','productNm','orderAmt','orderPrice'],
-    	data : [{
-    		orderNm : '홍길동',
-    		orderDt : new Date(),
-    		productNm : '지우개',
-    		orderStatus : 'Y',
-    		orderAmt : 100,
-    		orderPrice : 20000
-    	},{
-    		orderNm : '김철수',
-    		orderDt : new Date(),
-    		productNm : '샤프',
-    		orderStatus : 'Y',
-    		orderAmt : 20,
-    		orderPrice : 1000
-    	},{
-    		orderNm : '이진수',
-    		orderDt : new Date(),
-    		productNm : '연필',
-    		orderStatus : 'N',
-    		orderAmt : 50,
-    		orderPrice : 10000
-    	}]
+    bind : {
+    	store : '{orderList}'
     },
     bbar : {
     	xtype : 'pagingtoolbar',

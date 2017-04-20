@@ -29,15 +29,10 @@ Ext.define('Study.view.main.Main', {
     			text : 'ExtJS TV님',
     			menu : [{
     				text : '비밀번호 변경',
-    				handler : function(btn) {
-    					Ext.widget("updatePassword");
-    				}
+    				handler : 'updatePasswordBtn'
     			},{
     				text : '로그아웃',
-    				handler : function(btn) {
-    					btn.up("viewport").destroy();
-    					Ext.widget("login");
-    				}
+    				handler : 'logoutBtn'
     			}]
     		}]
     	}]
@@ -50,49 +45,10 @@ Ext.define('Study.view.main.Main', {
     	items : {
     		xtype : 'treelist',
     		listeners : {
-    			selectionchange : function(obj,record){
-    				var center = obj.up("viewport").down("component[region=center]");
-    				center.removeAll(true);
-    				center.add({
-    					xtype : record.get("page")
-    				});
-    			}
+    			selectionchange : 'menuChange'
     		},
-    		store : {
-    			root : {
-    				expanded : true,
-    				children: [{
-    					text : '상품관리',
-    					iconCls : 'x-fa fa-gift',
-    					expanded : true,
-    					selectable : false,
-    					children : [{
-    						text : '상품목록',
-    						page : 'productList',
-    						leaf : true
-    					}]
-    				},{
-    					text : '주문관리',
-    					iconCls : 'x-fa fa-shopping-cart',
-    					expanded : true,
-    					selectable : false,
-    					children : [{
-    						text : '주문목록',
-    						page : 'orderList',
-    						leaf : true
-    					}]
-    				},{
-    					text : '회원관리',
-    					iconCls : 'x-fa fa-users',
-    					expanded : true,
-    					selectable : false,
-    					children : [{
-    						text : '회원목록',
-    						page : 'memberList',
-    						leaf : true
-    					}]
-    				}]
-    			}
+    		bind : {
+    			store : '{menuList}'
     		}
     	}
     },{

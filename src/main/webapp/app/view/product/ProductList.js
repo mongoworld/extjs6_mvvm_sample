@@ -1,6 +1,13 @@
+/**
+ * TODO -  이 클래스는 상품목록 패널컴포넌트입니다.
+ * 					다른 컴포넌트(memberList,orderList)와 다르게 툴바 하나가 더 존재하여 
+ * 					일반 패널 컴포넌트로 define 하였습니다.
+ */
 Ext.define('Study.view.product.ProductList', {
     extend: 'Ext.panel.Panel',
     xtype: 'productList',
+    controller: 'productList',
+    viewModel: 'productList',
     title : '상품목록 조회',
     items : [{
     	xtype : 'toolbar',
@@ -46,39 +53,8 @@ Ext.define('Study.view.product.ProductList', {
         	flex : 1,
         	dataIndex : 'rgstrDt'
         }],
-        store : {
-        	fields : ['productNm','price','amount','rgstrDt'],
-        	data : [{
-        		productNm : '지우개',
-        		price : 500,
-        		amount : 100,
-        		rgstrDt : new Date()
-        	},{
-        		productNm : '연필',
-        		price : 300,
-        		amount : 300,
-        		rgstrDt : new Date()
-        	},{
-        		productNm : '샤프',
-        		price : 1000,
-        		amount : 200,
-        		rgstrDt : new Date()
-        	},{
-        		productNm : '계산기',
-        		price : 10000,
-        		amount : 10,
-        		rgstrDt : new Date()
-        	},{
-        		productNm : 'A4용지',
-        		price : 100,
-        		amount : 1200,
-        		rgstrDt : new Date()
-        	},{
-        		productNm : 'B4용지',
-        		price : 150,
-        		amount : 2000,
-        		rgstrDt : new Date()
-        	}]
+        bind : {
+        	store : '{productList}'
         }
     }]
 });

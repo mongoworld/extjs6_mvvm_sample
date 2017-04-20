@@ -5,6 +5,7 @@
 Ext.define('Study.view.login.Login', {
     extend: 'Ext.window.Window',
     xtype: 'login',
+    controller: 'login',
     layout : 'center',
     closable : false,
     maximized : true,
@@ -31,10 +32,7 @@ Ext.define('Study.view.login.Login', {
     		xtype : 'button',
     		width : 165,
     		text : '로그인',
-    		handler : function(btn) {
-    			btn.up("window").close();
-    			Ext.widget("main");
-    		}
+    		handler : 'loginBtn'
     	}]
     }]
 });
