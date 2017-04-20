@@ -7,7 +7,22 @@ Ext.define('Study.view.login.LoginController', {
     loginBtn : function(btn) {
     	var me = this;
     	var view = me.getView();
-    	view.close();
-		Ext.widget("main");
+    	var params = view.down("form").getForm().getValues();
+    	Ext.Ajax.request({
+    		url : '/findLogin',
+    		method : 'POST',
+    		params : params,
+    		success : function(res){
+    			var result = Ext.decode(res.responseText);
+    			if(result['code'] == 200) {
+    				view.close();
+    				Ext.widget("main");			
+    			}
+    			else {
+    				Ext.Msg.alert("알림",result['msg']);
+    				return;
+    			}
+    		}
+    	})
     }
 });

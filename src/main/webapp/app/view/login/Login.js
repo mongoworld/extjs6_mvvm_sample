@@ -23,10 +23,12 @@ Ext.define('Study.view.login.Login', {
     	},
     	items : [{
     		xtype : 'textfield',
+    		name : 'adminId',
     		value : 'admin'
     	},{
     		xtype : 'textfield',
     		inputType : 'password',
+    		name : 'adminPwd',
     		value : '1234'
     	},{
     		xtype : 'button',
