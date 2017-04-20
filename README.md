@@ -31,3 +31,4 @@ Go to address
 # ExtJS 6 Summary of Video Lectures
 http://mongodev.tistory.com
 The above address is the address of the blog which summarized contents of ExtJS 5 ~ 6 version.
+
