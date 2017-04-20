@@ -14,10 +14,11 @@ ExtJS 6.2 GPL + Spring Boot를 이용하여 간단한 ExtJS MVVM 프로젝트를
 </pre>
 
 # 최종빌드된 결과를 확인할 수 있는 URL - 배포본
-https://mongoworld.github.io
 <pre>
-위 주소는 서버연동은 하지않고, 오직 화면작업만 되있는 페이지입니다.
+아래 주소는 서버연동 없이, 화면작업만 되있는 페이지입니다.
 </pre>
+
+프로젝트 실행화면 : https://mongoworld.github.io
 
 # ExtJS 6 무료 YOUTUBE 강좌
 <pre>
@@ -25,12 +26,14 @@ https://mongoworld.github.io
 YOUTUBE에서 "ExtJS TV" 를 검색하세요.
 </pre>
 
+유튜브 채널 : https://www.youtube.com/channel/UCmIEd8PTq5PXJyXlboXKOpQ
+
 # ExtJS 6 영상강좌 내용정리
 <pre>
 아래 링크는 ExtJS 5~6 버전까지의 내용을 정리한 블로그주소 입니다.
 </pre>
 
-http://mongodev.tistory.com
+블로그주소 : http://mongodev.tistory.com
 
 # ExtJS 6 course sample code
 I have created a simple ExtJS MVVM project using ExtJS 6.2 GPL + Spring Boot.
