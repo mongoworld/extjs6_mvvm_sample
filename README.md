@@ -1,8 +1,10 @@
 # 개발환경
+<pre>
 JAVA 1.8
 MySQL/MariaDB
 Maven
 Spring Boot
+</pre>
  
 ※ application.properties 파일 변경 필수!
 
