@@ -31,6 +31,7 @@ public class LoginController {
 		try {
 			result = dao.findLogin(param);
 			result.put("code", 200);
+			result.put("adminNm", result.get("admin_name").toString());
 			request.getSession().setAttribute("admin", result);
 		} catch (SQLException e) {
 			e.printStackTrace();
