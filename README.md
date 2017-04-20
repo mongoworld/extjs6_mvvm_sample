@@ -1,3 +1,11 @@
+# 개발환경
+JAVA 1.8
+MySQL/MariaDB
+Maven
+Spring Boot
+ 
+※ application.properties 파일 변경 필수!
+
 # ExtJS 6 강좌샘플코드
 ExtJS 6.2 GPL + Spring Boot를 이용하여 간단한 ExtJS MVVM 프로젝트를 만들어보았습니다.
 
@@ -31,4 +39,3 @@ Go to address
 # ExtJS 6 Summary of Video Lectures
 http://mongodev.tistory.com
 The above address is the address of the blog which summarized contents of ExtJS 5 ~ 6 version.
-
