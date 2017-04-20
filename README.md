@@ -1,8 +1,8 @@
 # 개발환경
-JAVA 1.8
-MySQL/MariaDB
-Maven
-Spring Boot
+JAVA 1.8.
+MySQL/MariaDB.
+Maven.
+Spring Boot.
  
 ※ application.properties 파일 변경 필수!
 
