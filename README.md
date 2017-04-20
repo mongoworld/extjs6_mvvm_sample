@@ -15,7 +15,7 @@ ExtJS 6.2 GPL + Spring Boot를 이용하여 간단한 ExtJS MVVM 프로젝트를
 
 # 최종빌드된 결과를 확인할 수 있는 URL - 배포본
 <pre>
-https://mongoworld.github.io
+<https://mongoworld.github.io>
 하지만, 위 주소는 서버 API 연동은 하지않고 오직 화면작업만 되있는 페이지입니다 ^^
 </pre>
 
