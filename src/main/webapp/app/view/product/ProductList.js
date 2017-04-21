@@ -8,38 +8,61 @@ Ext.define('Study.view.product.ProductList', {
     xtype: 'productList',
     controller: 'productList',
     viewModel: 'productList',
+    listeners : {
+    	boxready : 'onLoadData',
+    	resize : 'setGridHeight'
+    },
     title : '상품목록 조회',
     items : [{
     	xtype : 'toolbar',
     	items : [{
     		xtype : 'textfield',
     		fieldLabel : '상품명',
-    		name : 'itemNm'
+    		name : 'itemNm',
+    		bind : {
+    			value : '{itemNm}'
+    		}
     	},{
     		xtype : 'numberfield',
     		fieldLabel : '가격',
-    		name : 'itemPrc'
+    		name : 'itemPrc',
+    		bind : {
+    			value : '{itemPrc}'
+    		}
     	},{
     		xtype : 'numberfield',
     		fieldLabel : '재고량',
-    		name : 'itemAmt'
+    		name : 'itemAmt',
+    		bind : {
+    			value : '{itemAmt}'
+    		}
     	},{
     		xtype : 'button',
-    		text : '저장'
+    		text : '저장',
+    		handler : 'addProduct'
     	},{
     		xtype : 'button',
     		text : '초기화'
     	}]
     },{
     	xtype : 'grid',
+    	viewConfig : {
+    		emptyText : '상품이 존재하지 않습니다'
+    	},
+    	height : 150,
     	columnLines : true,
         tbar : [{
         	xtype : 'textfield',
         	flex : 1,
-            emptyText : '찾으실 상품명을 입력하세요'
+        	name : 'searchValue',
+            emptyText : '찾으실 상품명을 입력하세요',
+            bind : {
+            	value : '{searchValue}'
+            }
         },{
         	xtype : 'button',
-        	text : '검색'
+        	text : '검색',
+        	handler : 'searchBtn'
         }],
         columns : [{
         	xtype : 'rownumberer'
