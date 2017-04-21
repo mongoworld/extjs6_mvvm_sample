@@ -16,8 +16,9 @@ Ext.define('Study.view.login.LoginController', {
     			var result = Ext.decode(res.responseText);
     			if(result['code'] == 200) {
     				view.close();
-                    var mainView = Ext.widget("main");
-                    mainView.adminNm = result['adminNm'];
+                    Ext.widget("main",{
+                    	adminNm : result['adminNm']
+                    });
     			}
     			else {
     				Ext.Msg.alert("알림",result['msg']);
