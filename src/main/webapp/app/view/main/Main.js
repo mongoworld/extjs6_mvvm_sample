@@ -47,11 +47,9 @@ Ext.define('Study.view.main.Main', {
     	layout : 'fit',
     	items : {
     		xtype : 'treelist',
+    		store : 'menuList',
     		listeners : {
     			selectionchange : 'menuChange'
-    		},
-    		bind : {
-    			store : '{menuList}'
     		}
     	}
     },{
