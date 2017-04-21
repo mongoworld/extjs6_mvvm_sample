@@ -3,37 +3,37 @@ Ext.define('Study.view.product.ProductListModel', {
     alias: 'viewmodel.productList',
     stores : {
     	productList : {
-    		fields : ['productNm','price','amount','rgstrDt'],
+    		fields : ['itemtNm','itemPrc','itemAmt','itemRegDt'],
         	data : [{
-        		productNm : '지우개',
-        		price : 500,
-        		amount : 100,
-        		rgstrDt : new Date()
+        		itemtNm : '지우개',
+        		itemPrc : 500,
+        		itemAmt : 100,
+        		itemRegDt : new Date()
         	},{
-        		productNm : '연필',
-        		price : 300,
-        		amount : 300,
-        		rgstrDt : new Date()
+        		itemtNm : '연필',
+        		itemPrc : 300,
+        		itemAmt : 300,
+        		itemRegDt : new Date()
         	},{
-        		productNm : '샤프',
-        		price : 1000,
-        		amount : 200,
-        		rgstrDt : new Date()
+        		itemtNm : '샤프',
+        		itemPrc : 1000,
+        		itemAmt : 200,
+        		itemRegDt : new Date()
         	},{
-        		productNm : '계산기',
-        		price : 10000,
-        		amount : 10,
-        		rgstrDt : new Date()
+        		itemtNm : '계산기',
+        		itemPrc : 10000,
+        		itemAmt : 10,
+        		itemRegDt : new Date()
         	},{
-        		productNm : 'A4용지',
-        		price : 100,
-        		amount : 1200,
-        		rgstrDt : new Date()
+        		itemtNm : 'A4용지',
+        		itemPrc : 100,
+        		itemAmt : 1200,
+        		itemRegDt : new Date()
         	},{
-        		productNm : 'B4용지',
-        		price : 150,
-        		amount : 2000,
-        		rgstrDt : new Date()
+        		itemtNm : 'B4용지',
+        		itemPrc : 150,
+        		itemAmt : 2000,
+        		itemRegDt : new Date()
         	}]
         }
     }

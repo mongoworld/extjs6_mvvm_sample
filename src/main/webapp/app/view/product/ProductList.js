@@ -4,7 +4,7 @@
  * 					일반 패널 컴포넌트로 define 하였습니다.
  */
 Ext.define('Study.view.product.ProductList', {
-    extend: 'Ext.panel.Panel',
+    extend: 'Ext.form.Panel',
     xtype: 'productList',
     controller: 'productList',
     viewModel: 'productList',
@@ -13,23 +13,30 @@ Ext.define('Study.view.product.ProductList', {
     	xtype : 'toolbar',
     	items : [{
     		xtype : 'textfield',
-    		fieldLabel : '상품명'
+    		fieldLabel : '상품명',
+    		name : 'itemNm'
     	},{
     		xtype : 'numberfield',
-    		fieldLabel : '가격'
+    		fieldLabel : '가격',
+    		name : 'itemPrc'
     	},{
     		xtype : 'numberfield',
-    		fieldLabel : '상품명'
+    		fieldLabel : '재고량',
+    		name : 'itemAmt'
     	},{
     		xtype : 'button',
-    		text : '등록'
+    		text : '저장'
+    	},{
+    		xtype : 'button',
+    		text : '초기화'
     	}]
     },{
     	xtype : 'grid',
     	columnLines : true,
         tbar : [{
         	xtype : 'textfield',
-            emptyText : '검색어를 입력하세요'
+        	flex : 1,
+            emptyText : '찾으실 상품명을 입력하세요'
         },{
         	xtype : 'button',
         	text : '검색'
@@ -38,20 +45,37 @@ Ext.define('Study.view.product.ProductList', {
         	xtype : 'rownumberer'
         },{
         	text : '상품명',
+        	style : 'text-align:center',
         	flex : 1,
-        	dataIndex : 'productNm'
+        	dataIndex : 'itemtNm'
         },{
         	text : '가격',
+        	style : 'text-align:center',
         	flex : 1,
-        	dataIndex : 'price'
+        	dataIndex : 'itemPrc'
         },{
         	text : '재고량',
+        	style : 'text-align:center',
         	flex : 1,
-        	dataIndex : 'amount'
+        	dataIndex : 'itemAmt'
         },{
         	text : '등록일',
+        	style : 'text-align:center',
         	flex : 1,
-        	dataIndex : 'rgstrDt'
+        	dataIndex : 'itemRegDt'
+        },{
+        	xtype : 'widgetcolumn',
+        	text : '삭제',
+        	align : 'center',
+        	flex : 1,
+        	widget : {
+        		xtype : 'button',
+        		text : '상품삭제',
+        		handler : function(btn) {
+        			var record = btn.getWidgetRecord();
+        			console.log("S",record.getData())
+        		}
+        	}
         }],
         bind : {
         	store : '{productList}'
