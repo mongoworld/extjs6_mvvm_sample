@@ -10,6 +10,7 @@ Ext.define('Study.Application', {
 
     stores: [
         // TODO: add global / shared stores here
+        'MenuList'
     ],
     
     launch: function () {
