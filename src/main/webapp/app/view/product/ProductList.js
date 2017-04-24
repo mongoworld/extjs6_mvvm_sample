@@ -42,10 +42,14 @@ Ext.define('Study.view.product.ProductList', {
     		handler : 'addProduct'
     	},{
     		xtype : 'button',
-    		text : '초기화'
+    		text : '초기화',
+    		handler : 'formatBtn'
     	}]
     },{
     	xtype : 'grid',
+    	listeners : {
+    		celldblclick : 'onUpdateForm'
+    	},
     	viewConfig : {
     		emptyText : '상품이 존재하지 않습니다'
     	},
@@ -85,7 +89,13 @@ Ext.define('Study.view.product.ProductList', {
         	text : '등록일',
         	style : 'text-align:center',
         	flex : 1,
-        	dataIndex : 'itemRegDt'
+        	dataIndex : 'itemRegDt',
+        	renderer : function(value){
+        		if(value != undefined && value != null && value != "") {
+        			return Ext.util.Format.date(new Date(value), "Y-m-d H:i:s");
+        		}
+        		return value;
+        	}
         },{
         	xtype : 'widgetcolumn',
         	text : '삭제',
@@ -94,10 +104,7 @@ Ext.define('Study.view.product.ProductList', {
         	widget : {
         		xtype : 'button',
         		text : '상품삭제',
-        		handler : function(btn) {
-        			var record = btn.getWidgetRecord();
-        			console.log("S",record.getData())
-        		}
+        		handler : 'removeBtn'
         	}
         }],
         bind : {
