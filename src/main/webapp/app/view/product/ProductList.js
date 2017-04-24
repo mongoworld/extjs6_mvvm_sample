@@ -70,7 +70,7 @@ Ext.define('Study.view.product.ProductList', {
         	text : '상품명',
         	style : 'text-align:center',
         	flex : 1,
-        	dataIndex : 'itemtNm'
+        	dataIndex : 'itemNm'
         },{
         	text : '가격',
         	style : 'text-align:center',
