@@ -3,7 +3,7 @@ Ext.define("Study.store.ProductList",{
 	alias : 'store.productList',
 	storeId : 'productList',
 	autoLoad : false,
-	fields : ['itemtNm','itemPrc','itemAmt','itemRegDt'],
+	fields : ['itemSeq','itemNm','itemPrc','itemAmt','itemRegDt'],
 	proxy : {
 		type : 'ajax',
 		actionMethods : {
