@@ -10,11 +10,7 @@ Ext.define('Study.view.product.ProductListController', {
     	var viewModel = me.getViewModel();
     	//view['xtype'] == "productList"
     	var store = viewModel.getStore(view['xtype']);
-    	store.load({
-    		callback :function(data){
-    			console.log(data);
-    		}
-    	});
+    	store.load();
     },
     /**
      * 검색 기능
