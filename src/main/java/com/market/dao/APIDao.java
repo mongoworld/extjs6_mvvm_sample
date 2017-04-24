@@ -29,7 +29,7 @@ public class APIDao {
 	}
 
 	public List<Map<String,Object>> listProduct(Product param) throws SQLException {
-		String query = "SELECT item_name productNm, item_price price, item_amount amount, item_regdate rgstrDt FROM item ";
+		String query = "SELECT item_name itemtNm, item_price itemPrc, item_amount itemAmt, item_regdate itemRegDt FROM item ";
 		if(param.getSearchValue() != null && !param.getSearchValue().equals("")) {
 			query += "WHERE item_name LIKE CONCAT('%','"+param.getSearchValue()+"','%') ";	
 		}
