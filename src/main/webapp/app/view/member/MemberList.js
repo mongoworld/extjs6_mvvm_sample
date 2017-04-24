@@ -54,13 +54,6 @@ Ext.define('Study.view.member.MemberList', {
     		xtype : 'textfield'
     	}
     },{
-    	text : '연락처',
-    	flex : 1,
-    	dataIndex : 'memberPhone',
-    	editor : {
-    		xtype : 'textfield'
-    	}
-    },{
     	text : '가입일',
     	flex : 1,
     	dataIndex : 'memberRgstrDt'
