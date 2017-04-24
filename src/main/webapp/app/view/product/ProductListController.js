@@ -55,7 +55,7 @@ Ext.define('Study.view.product.ProductListController', {
     			var result = Ext.decode(res.responseText);
     			//정상등록
     			if(result['code'] == 200){
-    				viewModel.getStore(view['xtype']).reload();
+    				viewModel.getStore(view['xtype']).load();
     			}
     			else {
     				Ext.Msg.alert("알림",result['msg']);
