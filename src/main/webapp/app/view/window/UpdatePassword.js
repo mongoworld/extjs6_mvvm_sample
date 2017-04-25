@@ -24,12 +24,10 @@ Ext.define('Study.view.window.UpdatePassword', {
     		fieldLabel : '비밀번호 확인'
     	}]
     }],
-    bbar : [{
-    	xtype : 'button',
+    buttons: [{
     	text : '비밀번호변경',
     	handler : 'updateBtn'
     },{
-    	xtype : 'button',
     	text : '닫   기',
     	handler : 'closeBtn'
     }]
