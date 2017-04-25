@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.market.dao.APIDao;
 import com.market.domain.Member;
+import com.market.domain.Order;
 import com.market.domain.Product;
 
 @Service
@@ -81,5 +82,25 @@ public class APIService {
 	 */
 	public List<Map<String, Object>> listMember(Member param)  throws SQLException {
 		return dao.listMember(param);
+	}
+	
+	/**
+	 * 주문 수 조회
+	 * @param param
+	 * @return
+	 * @throws SQLException
+	 */
+	public Long listOrderTotalCount(Order param)  throws SQLException {
+		return dao.listOrderTotalCount(param);
+	}
+
+	/**
+	 * 주문목록 조회
+	 * @param param
+	 * @return
+	 * @throws SQLException
+	 */
+	public List<Map<String, Object>> listOrder(Order param)  throws SQLException {
+		return dao.listOrder(param);
 	}
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.market.domain.Member;
+import com.market.domain.Order;
 import com.market.domain.Product;
 import com.market.service.APIService;
 
@@ -178,6 +179,38 @@ public class APIController {
 			e.printStackTrace();
 			result.put("code", e.getErrorCode());
 			result.put("msg", "회원목록조회 실패");
+			return result;
+		}
+		return result;
+	}
+	
+	/**
+	 * ============== 주문 API ============== 
+	 * 주문목록조회 API
+	 * @param param
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="/list/order", method=RequestMethod.POST)
+	public Map<String,Object> listOrder(HttpServletRequest request, Order param){
+		Map<String, Object> result = new HashMap<String,Object>();
+		List<Map<String,Object>> data = null;
+		try {
+			// 상품 목록 수 조회
+			Long totalCount = 0L;
+				  totalCount = service.listOrderTotalCount(param);
+				  
+			if(totalCount > 0) {
+				// 상품 목록 조회
+				data = service.listOrder(param);
+			}
+			result.put("code", 200);
+			result.put("totalCount", totalCount);
+			result.put("data", data);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			result.put("code", e.getErrorCode());
+			result.put("msg", "주문목록조회 실패");
 			return result;
 		}
 		return result;
