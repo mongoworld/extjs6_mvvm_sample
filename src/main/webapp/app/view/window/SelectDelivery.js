@@ -5,7 +5,8 @@
 Ext.define('Study.view.window.SelectDelivery', {
     extend: 'Ext.window.Window',
     xtype: 'selectDelivery',
-//    controller : 'selectDelivery',
+    controller : 'selectDelivery',
+    viewModel: 'selectDelivery',
     width : 610,
     height : 260,
     title : '배송정보 조회',
