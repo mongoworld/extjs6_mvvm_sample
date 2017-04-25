@@ -5,7 +5,7 @@ Ext.define("Study.store.MemberList",{
 	autoLoad : false,
 	fields : ['memberSeq','memberId','memberNm','memberAddr','memberRegDt'],
 	//한페이지 몇개 호출?
-	pageSize : 10,
+	pageSize : 5,
 	proxy : {
 		type : 'ajax',
 		actionMethods : {
