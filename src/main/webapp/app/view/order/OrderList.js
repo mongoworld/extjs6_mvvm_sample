@@ -3,31 +3,18 @@
  */
 Ext.define('Study.view.order.OrderList', {
     extend: 'Ext.grid.Panel',
+    listeners : {
+    	boxready : 'onLoadData'
+    },
     xtype: 'orderList',
     controller: 'orderList',
     viewModel: 'orderList',
     title : '주문목록 조회',
     columnLines : true,
     tbar : [{
-    	xtype : 'combo',
-    	editable : false,
-    	displayField : 'key',
-		valueField : 'value',
-		queryMode : 'local',
-		value : 'orderNm',
-    	store : {
-    		fields : ['key','value'],
-    		data : [{
-    			key : '주문자명',
-    			value : 'orderNm'
-    		},{
-    			key : '주문상태',
-    			value : 'orderStatus'
-    		}]
-    	}
-    },{
     	xtype : 'textfield',
-        emptyText : '검색어를 입력하세요'
+    	flex : 1,
+        emptyText : '주문자명을 입력하세요'
     },{
     	xtype : 'button',
     	text : '검색'
@@ -37,11 +24,11 @@ Ext.define('Study.view.order.OrderList', {
     },{
     	text : '주문자명',
     	flex : 1,
-    	dataIndex : 'orderNm'
+    	dataIndex : 'memberNm'
     },{
     	text : '주문일',
     	flex : 1,
-    	dataIndex : 'orderDt'
+    	dataIndex : 'orderRegDt'
     },{
     	text : '주문상태',
     	flex : 1,
@@ -49,15 +36,15 @@ Ext.define('Study.view.order.OrderList', {
     },{
     	text : '제품명',
     	flex : 1,
-    	dataIndex : 'productNm'
+    	dataIndex : 'orderNm'
     },{
     	text : '수량',
     	flex : 1,
-    	dataIndex : 'orderAmt'
+    	dataIndex : 'orderCnt'
     },{
     	text : '금액',
     	flex : 1,
-    	dataIndex : 'orderPrice'
+    	dataIndex : 'orderTotalPrc'
     },{
     	xtype : 'widgetcolumn',
     	flex : 1,
