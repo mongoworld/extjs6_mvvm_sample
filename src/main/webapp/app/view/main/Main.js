@@ -23,12 +23,15 @@ Ext.define('Study.view.main.Main', {
     	header : false,
     	items : [{
     		xtype : 'toolbar',
+    		cls : 'top',
     		items : [{
     			xtype : 'label',
     			html : '<h2>Market Admin</h2>'
     		},'->',
     		{
     			xtype : 'button',
+    			scale : 'large',
+    			ui : 'materialbtn',
     			itemId : 'adminNm',
     			menu : [{
     				text : '비밀번호 변경',
@@ -41,19 +44,19 @@ Ext.define('Study.view.main.Main', {
     	}]
     },{
     	xtype : 'panel',
-    	split : true,
-    	width : 200,
+    	width : 278,
     	region : 'west',
     	layout : 'fit',
     	items : {
     		xtype : 'treelist',
+    		ui : 'menulist',
     		store : 'menuList',
     		listeners : {
     			selectionchange : 'menuChange'
     		}
     	}
     },{
-    	xtype : 'panel',
+    	xtype : 'container',
     	region : 'center'
     }]
 });
