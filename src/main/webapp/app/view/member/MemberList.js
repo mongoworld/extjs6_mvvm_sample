@@ -10,6 +10,7 @@ Ext.define('Study.view.member.MemberList', {
     controller: 'memberList',
     viewModel: 'memberList',
     title : '회원목록 조회',
+    margin : 15,
     plugins : 'cellediting',
     columnLines : true,
     tbar : [{

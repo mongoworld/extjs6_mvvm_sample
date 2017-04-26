@@ -10,6 +10,7 @@ Ext.define('Study.view.order.OrderList', {
     controller: 'orderList',
     viewModel: 'orderList',
     title : '주문목록 조회',
+    margin : 15,
     columnLines : true,
     tbar : [{
     	xtype : 'textfield',

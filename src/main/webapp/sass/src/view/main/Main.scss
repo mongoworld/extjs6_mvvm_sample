@@ -1,0 +1,56 @@
+@include extjs-button-large-ui(
+	$ui : 'materialbtn',
+	$background-color : #3e50b4,
+	$background-color-focus : #3e50b4,
+	$background-color-pressed : #3e50b4,
+	$background-color-over : #3e50b4,
+	$color : #fff,
+	$color-focus : #fff,
+	$color-pressed : #fff,
+	$color-over : #fff
+)
+
+@include treelist-ui(
+	$ui : 'menulist',
+	$padding : 15px 35px,
+	$background-color : #3e50b4,
+	//확장된 아이템들의 배경색 
+	$item-expanded-background-color : #3e50b4,
+	//각 아이템별 높이
+	$item-line-height : 59px,
+	$row-over-background-color : #fff,
+	$row-selected-background-color : #fff,
+	//기본 아이템 아이콘,확장표시,폰트색상
+	$item-icon-color : #fff,
+	$item-text-color : #fff,
+	$item-expander-color : #fff, 
+	//오버 아이템 아이콘,확장표시,폰트색상
+	$item-icon-over-color : #3e50b4,
+	$item-text-over-color : #3e50b4,
+	$item-expander-over-color : #3e50b4,
+	//아이템 글자크기
+	$item-text-font-size : 16px,
+	$item-icon-font-size : 16px,
+	$item-icon-width : 44px,
+	$item-expander-font-size : 16px,
+	$item-expander-width : 24px,
+)
+
+.top {
+	background-color : #3e50b4;
+	height : 65px;
+	font-size : 16px;
+	color : #fff;
+}
+
+.x-treelist-menulist .x-treelist-item-selected > .x-treelist-row	{
+	.x-treelist-item-wrap {
+		.x-treelist-item-icon {
+			color : #3e50b4
+		}
+		
+		.x-treelist-item-text {
+			color : #3e50b4
+		}
+	}
+}

@@ -13,6 +13,7 @@ Ext.define('Study.view.product.ProductList', {
     	resize : 'setGridHeight'
     },
     title : '상품목록 조회',
+    margin : 15,
     items : [{
     	xtype : 'toolbar',
     	items : [{
