@@ -4,6 +4,9 @@
  */
 Ext.define('Study.view.window.SelectDelivery', {
     extend: 'Ext.window.Window',
+    listeners : {
+    	boxready : 'onLoadData'
+    },
     xtype: 'selectDelivery',
     controller : 'selectDelivery',
     viewModel: 'selectDelivery',
@@ -20,15 +23,21 @@ Ext.define('Study.view.window.SelectDelivery', {
     items: [{
         xtype: 'textfield',
         fieldLabel: '받는사람',
-        value : '이순신'
+        bind : {
+        	value : '{deliveryNm}'
+        }
     }, {
         xtype: 'textfield',
         fieldLabel: '주소',
-        value : '(46112) 경기 성남시 수정구 태평1동 34번지 2층'
+        bind : {
+        	value : '{deliveryAddr}'
+        }
     }, {
         xtype: 'textfield',
         fieldLabel: '배송상태',
-        value : '배송중'
+        bind : {
+        	value : '{deliveryStatusNm}'
+        }
     }],
     buttons: [{
         text: '닫기',
