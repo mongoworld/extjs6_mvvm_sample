@@ -27,7 +27,7 @@ Ext.define('Study.view.product.ProductListController', {
      * 상품목록 그리드 리사이트
      */
     setGridHeight : function(obj){
-    	obj.down("grid").setHeight(Ext.Element.getViewportHeight()-150);
+    	obj.down("grid").setHeight(Ext.Element.getViewportHeight()-200);
     },
     /**
      * 상품 저장/수정
