@@ -103,4 +103,12 @@ public class APIService {
 	public List<Map<String, Object>> listOrder(Order param)  throws SQLException {
 		return dao.listOrder(param);
 	}
+
+	/**
+	 * 비밀번호 변경
+	 * @param param
+	 */
+	public void updatePassword(Map<String, Object> param)  throws SQLException {
+		dao.updatePassword(param);
+	}
 }

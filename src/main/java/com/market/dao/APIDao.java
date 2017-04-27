@@ -161,4 +161,14 @@ public class APIDao {
 		query += " LIMIT " + param.getStart() + " , " + param.getLimit();
 		return jdbcTemplate.queryForList(query);
 	}
+
+	/**
+	 * 비밀번호 변경
+	 * @param param
+	 */
+	public void updatePassword(Map<String, Object> param) throws SQLException {
+		String sql = "UPDATE admin SET admin_pwd = ? ";
+		   sql += " WHERE admin_id = ?";
+		   jdbcTemplate.update(sql,new Object[]{ param.get("adminPwd"), param.get("adminId")});	
+	}
 }

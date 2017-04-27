@@ -215,4 +215,33 @@ public class APIController {
 		}
 		return result;
 	}
+	
+	/**
+	 * 비밀번호 변경 API
+	 * @param param
+	 * @param request
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value="/update/password", method=RequestMethod.POST)
+	public Map<String,Object> updatePassword(HttpServletRequest request){
+		Map<String, Object> result = new HashMap<String,Object>();
+		Map<String,Object> param = new HashMap<String,Object>();
+		Map<String,Object> sessionInfo = (Map<String, Object>) request.getSession().getAttribute("admin");
+		try {
+			//세션에는 컬럼명으로 값들이 담겨있음
+			param.put("adminId", sessionInfo.get("admin_id"));
+			param.put("adminPwd", request.getParameter("adminPwd"));
+			service.updatePassword(param);
+			result.put("code", 200);
+			result.put("success", true);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			result.put("code", e.getErrorCode());
+			result.put("msg", "비밀번호 변경 실패");
+			result.put("success", false);
+			return result;
+		}
+		return result;
+	}
 }

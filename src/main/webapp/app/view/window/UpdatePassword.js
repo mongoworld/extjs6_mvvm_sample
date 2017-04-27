@@ -13,14 +13,18 @@ Ext.define('Study.view.window.UpdatePassword', {
     modal : true,
     items : [{
     	xtype : 'form',
+    	method : 'POST',
+    	url : '/api/update/password',
     	margin : 20,
     	items : [{
     		xtype : 'textfield',
     		inputType :'password',
+    		name : 'adminPwd',
     		fieldLabel : '비밀번호'
     	},{
     		xtype : 'textfield',
     		inputType :'password',
+    		name : 'confirmPwd',
     		fieldLabel : '비밀번호 확인'
     	}]
     }],

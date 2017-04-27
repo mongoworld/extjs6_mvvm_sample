@@ -49,5 +49,50 @@ Ext.define('Study.view.main.MainController', {
 		center.add({
 			xtype : record.get("page")
 		});
+    },
+    /**
+     * 좌측상단 Market Admin 로고 클릭시 대쉬보드 페이지 이동
+     */
+    mainChange : function(obj) {
+    	var me = this;
+    	var view = me.getView();
+    	var center = view.down("component[region=center]");
+    	var west = view.down("component[region=west]");
+    	obj.getEl().on('click', function(){
+    		west.removeAll(true);
+    		west.add({
+	    		xtype : 'treelist',
+	    		ui : 'menulist',
+	    		store : 'menuList',
+	    		listeners : {
+	    			selectionchange : 'menuChange'
+	    		}
+	    	});
+    		
+    		center.removeAll(true);
+    		center.add({
+    			xtype : 'mainDashboard'
+    		});
+	      }, obj);
+    },
+    /**
+     * 좌측상단 메뉴목록 접는 토글버튼
+     */
+    toggleMenuList : function(btn) {
+    	var me = this;
+    	var view = me.getView();
+    	var west = view.down("component[region=west]");
+    	var center = view.down("component[region=center]");
+    	var treelist = west.down("treelist"), ct = treelist.ownerCt;
+    	var collapsing = !treelist.getMicro();
+    	var newWidth = collapsing ? 110 : 278;
+    	
+    	 if (!collapsing) {
+    		 treelist.setMicro(false);
+         }
+    	 ct.setWidth(newWidth);
+         if (collapsing) {
+        	 treelist.setMicro(true);
+    	}
     }
 });

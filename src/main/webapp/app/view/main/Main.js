@@ -8,7 +8,8 @@ Ext.define('Study.view.main.Main', {
                 	,'Ext.form.field.ComboBox'
                 	,'Ext.ux.ProgressBarPager'
                 	,'Ext.ux.SlidingPager'
-                	,'Ext.grid.plugin.CellEditing'],
+                	,'Ext.grid.plugin.CellEditing',
+                	'Study.overrides.Item'],
     xtype: 'main',
     controller: 'main',
     viewModel: 'main',
@@ -25,8 +26,19 @@ Ext.define('Study.view.main.Main', {
     		xtype : 'toolbar',
     		cls : 'top',
     		items : [{
+                margin: '0 0 0 8',
+                scale : 'large',
+    			ui : 'materialbtn',
+                iconCls:'x-fa fa-navicon',
+                handler: 'toggleMenuList'
+            },{
     			xtype : 'label',
-    			html : '<h2>Market Admin</h2>'
+    			margin : '0 0 0 20',
+    			style : 'cursor:pointer;',
+    			html : '<h2>Market Admin</h2>',
+    			listeners: {
+    			    boxready: 'mainChange'
+    			}
     		},'->',
     		{
     			xtype : 'button',
@@ -57,6 +69,10 @@ Ext.define('Study.view.main.Main', {
     	}
     },{
     	xtype : 'container',
-    	region : 'center'
+    	region : 'center',
+    	autoScroll : true,
+    	items : {
+    		xtype : 'mainDashboard'
+    	} 
     }]
 });

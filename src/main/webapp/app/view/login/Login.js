@@ -6,33 +6,47 @@ Ext.define('Study.view.login.Login', {
     extend: 'Ext.window.Window',
     xtype: 'login',
     controller: 'login',
-    layout : 'center',
+    cls: 'login-background',
     closable : false,
     maximized : true,
     autoShow : true,
     header : false,
+    style : 'border-width : 0px;',
     onEsc : function(){
     	return false;
     },
+    layout : {
+		type : 'vbox',
+		align : 'center',
+		pack : 'center'
+	},
     items : [{
     	xtype : 'form',
-    	layout : {
-    		type : 'vbox',
-    		align : 'center',
-    		pack : 'center'
-    	},
-    	items : [{
+    	width: 410,
+    	layout: {
+            type: 'vbox',
+            align: 'stretch'
+        },
+    	cls : 'login-form',
+    	items : [ {
+            xtype: 'label',
+            margin : '0 0 0 20',
+            html : '<h2>관리자로그인</h2>'
+        },{
     		xtype : 'textfield',
+    		margin : '0 20 10 20',
     		name : 'adminId',
     		value : 'admin'
     	},{
     		xtype : 'textfield',
+    		margin : '0 20 10 20',
     		inputType : 'password',
     		name : 'adminPwd',
     		value : '1234'
     	},{
     		xtype : 'button',
-    		width : 165,
+    		margin : '0 20 20 20',
+    		scale: 'large',
     		text : '로그인',
     		handler : 'loginBtn'
     	}]

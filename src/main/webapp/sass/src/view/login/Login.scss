@@ -1,0 +1,13 @@
+.login-background{
+    .x-window-body {
+        background-image:url('/resources/images/background.jpg');
+        background-size:cover;
+        background-repeat:repeat;
+    }
+}
+
+.login-form {
+ 	.x-form-text-default, .x-placeholder-label-default {
+        padding: 15px;
+    }
+}

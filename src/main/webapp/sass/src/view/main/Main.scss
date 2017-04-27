@@ -34,6 +34,14 @@
 	$item-icon-width : 44px,
 	$item-expander-font-size : 16px,
 	$item-expander-width : 24px,
+	
+	//setMicro 접힌상태의 배경색
+	$toolstrip-background-color: #3e50b4,
+    $tool-indicator-selected-color: #fff,
+    //접히상태의 좌측에 대한 선택된 노드의 두께
+    $tool-indicator-selected-width: 5px,
+    //접히상태의 좌측에 대한 선택된 노드의 배경색
+    $tool-selected-background-color: mix(white,#3e50b4, 10%)
 )
 
 .top {
