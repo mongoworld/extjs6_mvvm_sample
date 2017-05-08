@@ -42,7 +42,7 @@ ExtJS 6.2 GPL + Spring Boot를 이용하여 간단한 ExtJS MVVM 프로젝트를
 YOUTUBE에서 "ExtJS TV" 를 검색하세요.
 </pre>
 
-유튜브 채널 : https://www.youtube.com/channel/UCmIEd8PTq5PXJyXlboXKOpQ
+유튜브 채널 : https://www.youtube.com/c/TVExtJS
 
 # ExtJS 6 영상강좌 내용정리
 <pre>
